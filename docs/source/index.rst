@@ -24,4 +24,4 @@ Table of Contents
 
 |image0|
 
-.. |image0| image:: https://github.com/CUEDOS/cascade-demo/blob/main/img/Cascade.png
+.. |image0| image:: img/cascade-logo.png

@@ -1,23 +1,27 @@
-Welcome to Helix's documentation!
-===================================
+Welcome to the CASCADE UAV Swarming demonstration project wiki! You can
+find useful pages in the sidebar on the left detailing how to set up
+the hardware and software environments and solutions to various problems
+which have been encountered along the way.
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
-
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+Table of Contents
+-----------------
 
 .. note::
 
    This project is under active development.
 
-Contents
---------
-
 .. toctree::
 
-   usage
-   api
+   installation
    getting_started
+   creating_a_path_in_qgroundcontrol
+   setting_up_px4_vision
+   setting_up_local_network
+   gazebo_multiple_drones
+   program_flow_diagram
+   distributed_swarming
+   failsafe_measures
+
+|image0|
+
+.. |image0| image:: https://github.com/CUEDOS/cascade-demo/blob/main/img/Cascade.png

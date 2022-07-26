@@ -1,33 +1,13 @@
-Getting Started
-=====
+Here are a few ways to get started with this repository. There are
+components of this repository that are just for physical experiments and
+others that are for SITL (Software in the Loop), however, a majority of
+it applies to both.
 
-.. _installation:
-
-Installation
-------------
-
-To use Helix, first install it using pip:
-
-.. code-block:: console
-
-   (.venv) $ pip install lumache
-
-Creating recipes
-----------------
-
-To retrieve a list of random ingredients,
-you can use the ``lumache.get_random_ingredients()`` function:
-
-.. autofunction:: lumache.get_random_ingredients
-
-The ``kind`` parameter should be either ``"meat"``, ``"fish"``,
-or ``"veggies"``. Otherwise, :py:func:`lumache.get_random_ingredients`
-will raise an exception.
-
-.. autoexception:: lumache.InvalidKindError
-
-For example:
-
->>> import lumache
->>> lumache.get_random_ingredients()
-['shells', 'gorgonzola', 'parsley']
+-  `Creating a path by
+   QGroundControl <https://github.com/CUEDOS/cascade-demo/wiki/Creating-a-Path-plan-in-QGroundControl>`__
+-  `Setting up PX4
+   Vision <https://github.com/CUEDOS/cascade-demo/wiki/Setting-up-PX4-Vision-Autonomy-Development-Kit>`__
+-  `Connecting
+   Drones <https://github.com/CUEDOS/cascade-demo/wiki/Setting-up-the-Local-Network>`__
+-  `Multiple
+   Drones <https://github.com/CUEDOS/cascade-demo/wiki/Flocking-Simulation-With-Multiple-Drones-in-Gazebo>`__

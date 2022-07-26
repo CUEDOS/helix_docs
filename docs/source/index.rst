@@ -20,3 +20,4 @@ Contents
 
    usage
    api
+   getting_started

@@ -59,4 +59,4 @@ Running QGroundControl with Gazebo and PX4 Firmware to create a plan based on wa
    Gazebo, you can see the quadrotor in a white cube to be more obvious.
    |Figure 1: Arrow of the quadrotor in QGroundControl|
 
-.. |Figure 1: Arrow of the quadrotor in QGroundControl| image:: https://github.com/CUEDOS/cascade-demo/blob/main/img/arrow.png
+.. |Figure 1: Arrow of the quadrotor in QGroundControl| image:: ../../img/arrow.png

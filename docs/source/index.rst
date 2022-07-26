@@ -24,4 +24,4 @@ Table of Contents
 
 |image0|
 
-.. |image0| image:: img/cascade-logo.png
+.. |image0| image:: ../../img/cascade-logo.png

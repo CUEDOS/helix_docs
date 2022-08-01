@@ -11,8 +11,7 @@ We have two tools in offboard mode in Helixio framework.
     import numpy as np
     from string import digits
 
-
-      def only_numeric(input_string):
+    def only_numeric(input_string):
         output_string = "".join(c for c in input_string if c in digits)
         return output_string
 
@@ -36,36 +35,36 @@ We have two tools in offboard mode in Helixio framework.
 
             assigned_pre_start_positions = {}
 
-        for i, agent in enumerate(swarm_priorities):
-            if len(self.pre_start_positions) > i:
-                assigned_pre_start_positions[agent] = self.pre_start_positions[i]
+            for i, agent in enumerate(swarm_priorities):
+                if len(self.pre_start_positions) > i:
+                    assigned_pre_start_positions[agent] = self.pre_start_positions[i]
+                else:
+                    # if there isnt enough pre start positions, start from current position
+                    assigned_pre_start_positions[agent] = swarm_telem[self.id].position_ned
+            self.prestart_position=assigned_pre_start_positions[self.id]
+            return assigned_pre_start_positions
+
+        def get_swarm_priorities(self, swarm_telem):
+            numeric_ids = {}
+            for agent in swarm_telem.keys():
+                numeric_ids[agent] = int(only_numeric(agent))
+
+            swarm_priorities = sorted(numeric_ids, key=numeric_ids.get)
+            return swarm_priorities
+
+        def path_following(self, swarm_telem, max_speed, time_step, max_accel, mission_start_time): # method to run during the experiment
+            mission_time=swarm_telem[self.id].current_time-mission_start_time # swarm_telem[self.id].current_time is the current time which is synchronous (from GPS)
+        
+            # calculating the target velocity
+            if (mission_time<=self.travel_time/2.00):
+                target_velocity=[2, 0, 0]
+            elif (mission_time<=self.travel_time):
+                target_velocity=[-2, 0, 0]
             else:
-                # if there isnt enough pre start positions, start from current position
-                assigned_pre_start_positions[agent] = swarm_telem[self.id].position_ned
-        self.prestart_position=assigned_pre_start_positions[self.id]
-        return assigned_pre_start_positions
-
-    def get_swarm_priorities(self, swarm_telem):
-        numeric_ids = {}
-        for agent in swarm_telem.keys():
-            numeric_ids[agent] = int(only_numeric(agent))
-
-        swarm_priorities = sorted(numeric_ids, key=numeric_ids.get)
-        return swarm_priorities
-
-    def path_following(self, swarm_telem, max_speed, time_step, max_accel, mission_start_time): # method to run during the experiment
-        mission_time=swarm_telem[self.id].current_time-mission_start_time # swarm_telem[self.id].current_time is the current time which is synchronous (from GPS)
+                target_velocity=[0, 0, 0] # to stop the drone after travel_time
+            output_vel = flocking.check_velocity(target_velocity, swarm_telem[self.id], max_speed, 0, time_step, max_accel) # getting the target velocity in its right format
         
-        # calculating the target velocity
-        if (mission_time<=self.travel_time/2.00):
-            target_velocity=[2, 0, 0]
-        elif (mission_time<=self.travel_time):
-            target_velocity=[-2, 0, 0]
-        else:
-            target_velocity=[0, 0, 0] # to stop the drone after travel_time
-        output_vel = flocking.check_velocity(target_velocity, swarm_telem[self.id], max_speed, 0, time_step, max_accel) # getting the target velocity in its right format
-        
-        return output_vel # sending the target velocity
+            return output_vel # sending the target velocity
 
 
 

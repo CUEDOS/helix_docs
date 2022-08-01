@@ -2,7 +2,7 @@ We have two tools in offboard mode in Helixio framework.
 
 1. Offboard Velocity Command
 =====================
-
+Target velocity can be sent to each flight controller on each drone by offboard velocity commands of MAVSDK.
 ::
 
     import json

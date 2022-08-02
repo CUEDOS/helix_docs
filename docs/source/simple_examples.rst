@@ -71,8 +71,9 @@ The result of using this experiment in software in the loop simulation is shown 
 .. raw:: html
 
    <p align="center"><img src="https://github.com/CUEDOS/helix_docs/blob/main/img/examp_velocity.png"></p>
-   
-
+ 
+ The file of this experiment is available at:  
+ https://github.com/CUEDOS/helixio_V2/blob/experiment_2/helixio/example_velocity.py
 2. Offboard Position Command
 =====================
 Target position can be sent to each flight controller on each drone by offboard position commands of MAVSDK. To send this command, you can assign target_position in path_following method as the point you want. Bear in mind that the point should be expressed with respect to the reference point (not home point).

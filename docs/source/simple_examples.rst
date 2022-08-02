@@ -145,4 +145,4 @@ The result of using this experiment in software in the loop simulation is shown 
 
 The file of this experiment is available at:
 
-github.com/CUEDOS/helixio_V2/blob/experiment_2/helixio/example_position.py
+https://github.com/CUEDOS/helixio_V2/blob/experiment_2/helixio/example_position.py

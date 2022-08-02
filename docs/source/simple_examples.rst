@@ -66,7 +66,7 @@ Target velocity can be sent to each flight controller on each drone by the offbo
         
             return output_vel # sending the target velocity
 
-In the constructor method, we get the reference and home geodetic position and call method load() to load data from the JSON file. In mehthod load(), we get prestart positoins and the time duration of the experiment. Methods get_pre_start_positions() and get_swarm_priorities() are to assign prestart positions and sort the drones in the swarm, respectively. method path_following() is the method running continuously during the experiment (after clicking on Start icon on Helixio GUI). You can write your rules to control the drone in this method. 
+In the constructor method, we get the reference and home geodetic positions and call method load() to load data from the JSON file. In mehthod load(), we get prestart positoins and the time duration of the experiment. Methods get_pre_start_positions() and get_swarm_priorities() are to assign prestart positions and sort the drones in the swarm, respectively. method path_following() is the method running continuously during the experiment (after clicking on Start icon on Helixio GUI). You can write your rules to control the drone in this method. 
 
 Note: The variable we use as the current time is swarm_telem[self.id].current_time, which is from GPS that is a synchronous source of time for all of the drones.
 

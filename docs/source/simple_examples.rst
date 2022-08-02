@@ -75,7 +75,7 @@ The result of using this experiment in software in the loop simulation is shown 
 
 2. Offboard Position Command
 =====================
-Target position can be sent to each flight controller on each drone by offboard position commands of MAVSDK.
+Target position can be sent to each flight controller on each drone by offboard position commands of MAVSDK. To send this command, you can assign target_position in path_following method as the point you want. Bear in mind that the point should be expressed with respect to the reference point (not home point).
 ::
 
     import json

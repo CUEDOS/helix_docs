@@ -1,8 +1,8 @@
-We have two commands in offboard mode during experiments to use in Helixio framework.
+We can send target velocity or target position in offboard mode during experiments to conrol drones in Helixio framework from their onboard computer. The two simple examplse for them are as follows:
 
 1. Offboard Velocity Command
 =====================
-Target velocity can be sent to each flight controller on each drone by the offboard velocity command of MAVSDK in North-East-Down coordination system.To send this command, you can assign target_velocity in path_following method as the velocity you want. Then, the framework gets this target velocity and prepares it for the MAVSDK offboard velocity command. Here is a simple example experiment code to send velocity commands to each drone.
+Target velocity can be sent to each flight controller on each drone by the offboard velocity command of MAVSDK in North-East-Down coordination system.To send this command, you can assign target_velocity in path_following method as the velocity you want and the flight_mode variable as "velocity". Then, the framework gets this target velocity and prepares it for the MAVSDK offboard velocity command. Here is a simple example experiment code to send velocity commands to each drone.
 ::
 
     import json

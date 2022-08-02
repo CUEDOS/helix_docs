@@ -2,7 +2,7 @@ We have two tools in offboard mode in Helixio framework.
 
 1. Offboard Velocity Command
 =====================
-Target velocity can be sent to each flight controller on each drone by the offboard velocity command of MAVSDK in North-East-Down coordination system.To send this command, you can assign target_velocity in path_following method as the velocity you want. Then, the framework gets this target velocity and prepares it for the offboard velocity command. 
+Target velocity can be sent to each flight controller on each drone by the offboard velocity command of MAVSDK in North-East-Down coordination system.To send this command, you can assign target_velocity in path_following method as the velocity you want. Then, the framework gets this target velocity and prepares it for the offboard velocity command. Here is a simple example experiment Python code to do send velocity commands to a each drone.
 ::
 
     import json
@@ -66,7 +66,9 @@ Target velocity can be sent to each flight controller on each drone by the offbo
         
             return output_vel # sending the target velocity
 
-The result of using this experiment in software in the loop simulation is shown below:
+In the constructor method, we get the reference and home geodetic position and call method load() to load data from the JSON file. In mehthod load(), we get prestart positoins and the time duratino of the experiment.
+o run the experiment, At first, click on Arm icon on Helixio GUI. Then, click on Takeoff to fly the dornes. Afterwards, click on Start to make the drones go to their prestart positions. Then, click on Start again to start the experiment. After completeing the experiment, you can click on Land, to land them all.
+The result of using this experiment with Helixio GUI in software in the loop simulation is shown below:
 
 .. raw:: html
 
@@ -138,7 +140,7 @@ Target position can be sent to each flight controller on each drone by offboard 
             output_pos = flocking.check_position(target_position, swarm_telem[self.id], max_speed, 0, time_step, self.reference_point, self.home_position) # getting the target velocity in its right format
             return output_pos # sending the target velocity
             
-The result of using this experiment in software in the loop simulation is shown below:
+The result of using this experiment with Helixio GUI in software in the loop simulation is shown below:
 
 .. raw:: html
 

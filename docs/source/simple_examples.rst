@@ -2,7 +2,7 @@ We can send target velocity or target position in offboard mode during experimen
 
 1. Offboard Velocity Command
 =====================
-Target velocity can be sent to each flight controller on each drone by the offboard velocity command of MAVSDK in North-East-Down coordination system.To send this command, you can assign target_velocity in path_following method as the velocity you want and the flight_mode variable as "velocity". Then, the framework gets this target velocity and prepares it for the MAVSDK offboard velocity command. Here is a simple example experiment code to send velocity commands to each drone.
+Target velocity can be sent to each flight controller on each drone by the offboard velocity command of MAVSDK in North-East-Down coordination system.To send this command, you can assign target_velocity in path_following() method as the velocity you want and the flight_mode variable (attribute) as "velocity". Then, the framework gets this target velocity and prepares it for the MAVSDK offboard velocity command. Here is a simple example experiment code to send velocity commands to each drone.
 ::
 
     import json
@@ -83,7 +83,7 @@ The above figure has been obtained using ulog_visulaiser.py in Post_flight_tools
  
 2. Offboard Position Command
 =====================
-Target position can be sent to each flight controller on each drone by offboard position commands of MAVSDK in North-East-Down. To send this command, you can assign target_position in path_following method as the point you want. Bear in mind that the point should be expressed with respect to the reference point (not home point). Then, the framework gets this target position and prepares it for the MAVSDK offboard position command.  Here is a simple example experiment code to send position commands to each drone.
+Target position can be sent to each flight controller on each drone by the offboard position command of MAVSDK in North-East-Down coordination system.To send this command, you can assign target_position in path_following() method as the positioin you want and the flight_mode variable (attribute) as "position". Bear in mind that the point should be expressed with respect to the reference point (not home point). Then, the framework gets this target position and prepares it for the MAVSDK offboard position command.  Here is a simple example experiment code to send position commands to each drone.
 ::
 
     import json

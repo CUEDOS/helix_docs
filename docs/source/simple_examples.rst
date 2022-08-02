@@ -2,7 +2,7 @@ We have two tools in offboard mode in Helixio framework.
 
 1. Offboard Velocity Command
 =====================
-Target velocity can be sent to each flight controller on each drone by the offboard velocity command of MAVSDK in North-East-Down coordination system.To send this command, you can assign target_velocity in path_following method as the velocity you want. Then, the framework gets this target velocity and prepares it for the offboard velocity command. Here is a simple example experiment Python code to do send velocity commands to a each drone.
+Target velocity can be sent to each flight controller on each drone by the offboard velocity command of MAVSDK in North-East-Down coordination system.To send this command, you can assign target_velocity in path_following method as the velocity you want. Then, the framework gets this target velocity and prepares it for the offboard velocity command. Here is a simple example experiment code to do send velocity commands to each drone.
 ::
 
     import json
@@ -78,7 +78,7 @@ The result of using this experiment with Helixio GUI in software in the loop sim
  https://github.com/CUEDOS/helixio_V2/blob/experiment_2/helixio/example_velocity.py
 2. Offboard Position Command
 =====================
-Target position can be sent to each flight controller on each drone by offboard position commands of MAVSDK in North-East-Down. To send this command, you can assign target_position in path_following method as the point you want. Bear in mind that the point should be expressed with respect to the reference point (not home point). Then, the framework gets this target position and prepares it for the offboard position command. 
+Target position can be sent to each flight controller on each drone by offboard position commands of MAVSDK in North-East-Down. To send this command, you can assign target_position in path_following method as the point you want. Bear in mind that the point should be expressed with respect to the reference point (not home point). Then, the framework gets this target position and prepares it for the offboard position command.  Here is a simple example experiment code to do send position commands to each drone.
 ::
 
     import json

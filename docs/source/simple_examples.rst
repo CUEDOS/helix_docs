@@ -1,4 +1,4 @@
-We have two tools in offboard mode in Helixio framework.
+We have two commands in offboard mode during experiments to use in Helixio framework.
 
 1. Offboard Velocity Command
 =====================

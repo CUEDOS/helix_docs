@@ -68,6 +68,8 @@ Target velocity can be sent to each flight controller on each drone by the offbo
 
 In the constructor method, we get the reference and home geodetic position and call method load() to load data from the JSON file. In mehthod load(), we get prestart positoins and the time duration of the experiment. Methods get_pre_start_positions() and get_swarm_priorities() are to assign prestart positions and sort the drones in the swarm, respectively. method path_following() is the method running continuously during the experiment (after clicking on Start icon on Helixio GUI). You can write your rules to control the drone in this method. 
 
+Note: The variable we use as the current time is swarm_telem[self.id].current_time, which is from GPS that is a synchronous source of time for all of the drones.
+
 To run the experiment, At first, click on Arm icon on Helixio GUI. Then, click on Takeoff to fly the dornes. Afterwards, click on Start to make the drones go to their prestart positions. Then, click on Start again to start the experiment. After completeing the experiment, you can click on Land, to land them all.
 The result of using this experiment with Helixio GUI for three drones and prestart positions as [0, 10, -20], [0, 20, -20] and [0, 30, -20] (defined in the JSON file) in software in the loop simulation is shown below:
 
@@ -143,7 +145,7 @@ Target position can be sent to each flight controller on each drone by offboard 
             output_pos = flocking.check_position(target_position, swarm_telem[self.id], max_speed, 0, time_step, self.reference_point, self.home_position) # getting the target velocity in its right format
             return output_pos # sending the target velocity
             
-
+The methods of this experiment file are the same as previous one except the commands in method path_following() that we editted to change the mission and commands we send to the drones.
 The result of using this experiment with Helixio GUI for three drones and prestart positions as [0, 10, -20], [0, 20, -20] and [0, 30, -20] (defined in the JSON file) in software in the loop simulation is shown below:
 
 .. raw:: html

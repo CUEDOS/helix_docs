@@ -66,8 +66,9 @@ Target velocity can be sent to each flight controller on each drone by the offbo
         
             return output_vel # sending the target velocity
 
-In the constructor method, we get the reference and home geodetic position and call method load() to load data from the JSON file. In mehthod load(), we get prestart positoins and the time duratino of the experiment.
-o run the experiment, At first, click on Arm icon on Helixio GUI. Then, click on Takeoff to fly the dornes. Afterwards, click on Start to make the drones go to their prestart positions. Then, click on Start again to start the experiment. After completeing the experiment, you can click on Land, to land them all.
+In the constructor method, we get the reference and home geodetic position and call method load() to load data from the JSON file. In mehthod load(), we get prestart positoins and the time duration of the experiment. Methods get_pre_start_positions() and get_swarm_priorities() are to assign prestart positions and sort the drones in the swarm, respectively. method path_following() is the method running continuously during the experiment (after clicking on Start icon on Helixio GUI). You can write your rules to control the drone in this method. 
+
+To run the experiment, At first, click on Arm icon on Helixio GUI. Then, click on Takeoff to fly the dornes. Afterwards, click on Start to make the drones go to their prestart positions. Then, click on Start again to start the experiment. After completeing the experiment, you can click on Land, to land them all.
 The result of using this experiment with Helixio GUI in software in the loop simulation is shown below:
 
 .. raw:: html

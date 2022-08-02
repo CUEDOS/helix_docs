@@ -75,6 +75,7 @@ The result of using this experiment in software in the loop simulation is shown 
 
 2. Offboard Position Command
 =====================
+Target position can be sent to each flight controller on each drone by offboard position commands of MAVSDK.
 ::
 
     import json
@@ -135,3 +136,9 @@ The result of using this experiment in software in the loop simulation is shown 
                 target_position=[0 + self.prestart_position[0], 0 + self.prestart_position[1], -20]
             output_pos = flocking.check_position(target_position, swarm_telem[self.id], max_speed, 0, time_step, self.reference_point, self.home_position) # getting the target velocity in its right format
             return output_pos # sending the target velocity
+            
+The result of using this experiment in software in the loop simulation is shown below:
+
+.. raw:: html
+
+   <p align="center"><img src="https://github.com/CUEDOS/helix_docs/blob/main/img/examp_velocity.png"></p>

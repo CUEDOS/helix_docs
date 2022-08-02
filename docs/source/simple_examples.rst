@@ -66,7 +66,12 @@ Target velocity can be sent to each flight controller on each drone by offboard 
         
             return output_vel # sending the target velocity
 
+The result of using this experiment in software in the loop simulation is shown below:
 
+.. raw:: html
+
+   <p align="center"><img src="https://github.com/CUEDOS/helix_docs/blob/main/img/examp_velocity.png"></p>
+   
 
 2. Offboard Position Command
 =====================

@@ -71,7 +71,7 @@ In the constructor method, we get the reference and home geodetic position and c
 Note: The variable we use as the current time is swarm_telem[self.id].current_time, which is from GPS that is a synchronous source of time for all of the drones.
 
 To run the experiment, At first, click on Arm icon on Helixio GUI. Then, click on Takeoff to fly the dornes. Afterwards, click on Start to make the drones go to their prestart positions. Then, click on Start again to start the experiment. After completeing the experiment, you can click on Land, to land them all.
-The result of using this experiment with Helixio GUI for three drones and prestart positions as [0, 10, -20], [0, 20, -20] and [0, 30, -20] (defined in the JSON file) in software in the loop simulation is shown below:
+The result of using this experiment with Helixio GUI for three drones and assigning travel_time as 40000000 (in microseconds), prestart positions as [0, 10, -20], [0, 20, -20] and [0, 30, -20] (in the JSON file) in software in the loop simulation is shown below:
 
 .. raw:: html
 
@@ -146,7 +146,7 @@ Target position can be sent to each flight controller on each drone by offboard 
             return output_pos # sending the target velocity
             
 The methods of this experiment file are the same as previous one except the commands in method path_following() that we editted to change the mission and commands we send to the drones.
-The result of using this experiment with Helixio GUI for three drones and prestart positions as [0, 10, -20], [0, 20, -20] and [0, 30, -20] (defined in the JSON file) in software in the loop simulation is shown below:
+The result of using this experiment with Helixio GUI for three drones and assigning travel_time as 40000000 (in microseconds), prestart positions as [0, 10, -20], [0, 20, -20] and [0, 30, -20] (in the JSON file) in software in the loop simulation is shown below:
 
 .. raw:: html
 

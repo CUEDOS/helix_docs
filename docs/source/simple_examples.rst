@@ -141,4 +141,4 @@ The result of using this experiment in software in the loop simulation is shown 
 
 .. raw:: html
 
-   <p align="center"><img src="https://github.com/CUEDOS/helix_docs/blob/main/img/examp_velocity.png"></p>
+   <p align="center"><img src="https://github.com/CUEDOS/helix_docs/blob/main/img/examp_position.png"></p>
